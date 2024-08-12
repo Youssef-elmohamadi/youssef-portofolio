@@ -321,6 +321,7 @@ main {
   padding-right: 30px;
   padding-top: 30px;
   padding-bottom: 30px;
+  margin-bottom: 30px;
   overflow: auto;
 }
 
@@ -482,7 +483,7 @@ main {
 
 .active {
   position: fixed;
-  z-index: 2;
+  z-index: 9999;
   left: 260px;
   animation: slideSection 1s ease;
 }
