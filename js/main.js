@@ -54,19 +54,43 @@ function closeAside() {
 }
 function active(section) {
   mySections.forEach((element) => {
+    isActive(element);
     element.classList.remove("active");
+  });
+
+  myLinks.forEach((link) => {
+    link.classList.remove("active-link");
   });
 
   if (section === "home") {
     home.classList.add("active");
+    homeBtn.classList.add("active-link");
   } else if (section === "about") {
     about.classList.add("active");
+    aboutBtn.classList.add("active-link");
   } else if (section === "serv") {
     services.classList.add("active");
+    servBtn.classList.add("active-link");
   } else if (section === "port") {
     port.classList.add("active");
+    portBtn.classList.add("active-link");
   } else if (section === "contact") {
     contact.classList.add("active");
+    contactBtn.classList.add("active-link");
+  }
+  myAside.classList.remove("clicked");
+  hiddenAsideBtn.classList.add("hidden");
+  asideBtn.classList.remove("hidden");
+  setTimeout(() => {
+    mySections.forEach((element) => {
+      element.classList.remove("section-back");
+    });
+  }, 1000);
+}
+
+function isActive(element) {
+  if (element.classList.contains("active")) {
+    element.classList.add("section-back");
   }
 }
 

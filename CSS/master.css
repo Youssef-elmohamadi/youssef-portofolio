@@ -97,7 +97,7 @@ aside h1::before {
 main {
   position: fixed;
   left: 260px;
-  height: 100%;
+  height: 80%;
 }
 .home {
   height: 100%;
@@ -177,9 +177,19 @@ main {
   bottom: -25px;
 }
 
+.serv {
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: var(--bg-main);
+  width: 100%;
+  padding: 30px;
+  overflow: auto;
+}
 .about,
 .portfolio,
-.contact {
+.contact,
+.serv {
   height: 100vh;
   position: fixed;
   top: 0;
@@ -311,8 +321,8 @@ main {
   margin: 10px 0px;
 }
 
-.serv {
-  min-height: 100vh;
+/* .serv {
+  height: 100vh;
   position: fixed;
   top: 0;
   background-color: var(--bg-main);
@@ -320,10 +330,8 @@ main {
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
   overflow: auto;
-}
+} */
 
 .container-cards {
   display: flex;
@@ -437,10 +445,6 @@ main {
   outline: none;
 }
 
-.contact-form input:focus-visible {
-  border: none;
-}
-
 .contact-form input:focus {
   border: none;
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
@@ -463,6 +467,7 @@ main {
   background-color: var(--side-color);
   padding: 10px;
   outline: none;
+  display: block;
 }
 
 .name,
@@ -489,7 +494,9 @@ main {
 }
 
 .section-back {
-  z-index: 1;
+  position: fixed;
+  z-index: 999;
+  left: 260px;
 }
 
 @keyframes slideSection {
