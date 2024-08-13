@@ -22,6 +22,11 @@ let contactBtn = document.querySelector(".contact-btn");
 let mySections = Array.from(document.getElementsByTagName("section"));
 let myLinks = Array.from(document.getElementsByTagName("li"));
 
+let dark = document.querySelector(".dark-mode-icon");
+let darkIcon = document.querySelectorAll(".dark-mode-icon i");
+
+dark.addEventListener("click", darkMode);
+
 // end for active function
 
 // stsrt for showIcon Function
@@ -86,6 +91,13 @@ function active(section) {
       element.classList.remove("section-back");
     });
   }, 1000);
+}
+
+function darkMode() {
+  document.body.classList.toggle("dark-theme");
+  darkIcon.forEach((i) => {
+    i.classList.toggle("hidden");
+  });
 }
 
 function isActive(element) {

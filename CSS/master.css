@@ -1,9 +1,22 @@
 /* start global rules  */
 :root {
   --side-color: #fdf9ff;
-  --main-color: #ec1839;
-  --bg-main: #f2f2fc;
+  --main-color: #f2f2fc;
+  --temp-color: #ec1839;
+  --main-text: #89818d;
+  --secondary-text: #000;
+  --border: #e8dfec;
 }
+
+.dark-theme {
+  --main-color: #151515;
+  --side-color: #222222;
+  --secondary-text: #fff;
+  --main-text: #e9e9e9;
+  --temp-color: #ec1839;
+  --border: #393939;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -24,7 +37,7 @@ body {
   z-index: 9999;
   display: flex;
   padding: 10px;
-  background-color: white;
+  background-color: var(--side-color);
   border-radius: 5px;
   height: 30px;
   width: 30px;
@@ -36,7 +49,27 @@ body {
   display: none;
 }
 .icon i {
-  color: var(--main-color);
+  color: var(--temp-color);
+}
+
+.dark-mode-icon {
+  z-index: 99999;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-color: var(--side-color);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.dark-mode-icon i {
+  position: absolute;
+  color: var(--temp-color);
+  font-size: 25px;
 }
 .my-side {
   display: flex;
@@ -58,14 +91,15 @@ body {
 }
 .logo h1 {
   font-size: 35px;
+  color: var(--secondary-text);
 }
 aside h1::after {
   content: "";
   position: absolute;
   width: 20px;
   height: 20px;
-  border-right: solid 5px var(--main-color);
-  border-top: solid 5px var(--main-color);
+  border-right: solid 5px var(--temp-color);
+  border-top: solid 5px var(--temp-color);
   right: -25px;
   top: 5px;
 }
@@ -74,25 +108,25 @@ aside h1::before {
   position: absolute;
   width: 20px;
   height: 20px;
-  border-left: solid 5px var(--main-color);
-  border-bottom: solid 5px var(--main-color);
+  border-left: solid 5px var(--temp-color);
+  border-bottom: solid 5px var(--temp-color);
   left: -25px;
   bottom: -5px;
 }
 
 .my-links li {
   padding: 10px 20px;
-  border-bottom: 3px solid #ddd;
+  border-bottom: 3px solid var(--border);
+  color: var(--secondary-text);
 }
 .my-links li a {
-  color: #000;
   font-weight: bold;
 }
 .my-links li i {
   padding: 5px 10px;
 }
 .active-link {
-  color: var(--main-color) !important;
+  color: var(--temp-color) !important;
 }
 main {
   position: fixed;
@@ -103,7 +137,8 @@ main {
   height: 100%;
 }
 .home .container {
-  background-color: var(--bg-main);
+  background-color: var(--main-color);
+  position: relative;
   padding-top: 60px;
   padding-bottom: 70px;
   height: 100%;
@@ -137,20 +172,21 @@ main {
 .personal-info h2 {
   margin: 20px 0px;
   letter-spacing: 1.3px;
+  color: var(--secondary-text);
 }
 
 .disc {
-  color: #89818d;
+  color: var(--main-text);
 }
 
 .personal-info h2 span {
-  color: var(--main-color);
+  color: var(--temp-color);
 }
 
 .btn-cv {
   padding: 10px 20px;
   border: none;
-  background-color: var(--main-color);
+  background-color: var(--temp-color);
   border-radius: 30px;
   color: #fff;
   margin-top: 50px;
@@ -161,8 +197,8 @@ main {
   position: absolute;
   width: 45px;
   height: 45px;
-  border-right: solid 7px var(--main-color);
-  border-top: solid 7px var(--main-color);
+  border-right: solid 7px var(--temp-color);
+  border-top: solid 7px var(--temp-color);
   right: 30px;
   top: -25px;
 }
@@ -171,8 +207,8 @@ main {
   position: absolute;
   width: 45px;
   height: 45px;
-  border-left: solid 7px var(--main-color);
-  border-bottom: solid 7px var(--main-color);
+  border-left: solid 7px var(--temp-color);
+  border-bottom: solid 7px var(--temp-color);
   left: 30px;
   bottom: -25px;
 }
@@ -181,7 +217,7 @@ main {
   min-height: 100vh;
   position: fixed;
   top: 0;
-  background-color: var(--bg-main);
+  background-color: var(--main-color);
   width: 100%;
   padding: 30px;
   overflow: auto;
@@ -193,7 +229,7 @@ main {
   height: 100vh;
   position: fixed;
   top: 0;
-  background-color: var(--bg-main);
+  background-color: var(--main-color);
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
@@ -203,6 +239,7 @@ main {
 .main-title {
   padding: 15px 0px;
   position: relative;
+  color: var(--secondary-text);
 }
 .main-title::after {
   content: "";
@@ -211,7 +248,7 @@ main {
   height: 3px;
   bottom: 13px;
   left: 0;
-  background-color: var(--main-color);
+  background-color: var(--temp-color);
 }
 .main-title::before {
   content: "";
@@ -220,7 +257,7 @@ main {
   height: 3px;
   bottom: 7px;
   left: 0;
-  background-color: var(--main-color);
+  background-color: var(--temp-color);
 }
 .about-disc {
   margin: 40px 0px;
@@ -228,9 +265,10 @@ main {
 .about-disc p.title {
   font-size: 16px;
   font-weight: bold;
+  color: var(--secondary-text);
 }
 .about-disc span {
-  color: var(--main-color);
+  color: var(--temp-color);
 }
 .about-disc p.disc {
   max-width: 700px;
@@ -248,16 +286,18 @@ main {
   padding: 10px 0px;
   font-weight: bold;
   font-size: 15px;
+  color: var(--secondary-text);
 }
 
 .title-exp {
   font-size: 20px;
   font-weight: bold;
   padding: 10px 0px;
+  color: var(--secondary-text);
 }
 
 .card p span {
-  color: #89818d;
+  color: var(--main-text);
   font-weight: normal;
 }
 .all-exp {
@@ -271,7 +311,7 @@ main {
   width: 45%;
 }
 .info {
-  background-color: #fff;
+  background-color: var(--side-color);
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
   padding: 20px 40px;
   border-radius: 4px;
@@ -288,7 +328,7 @@ main {
   position: absolute;
   width: 2px;
   height: 140px;
-  background-color: var(--main-color);
+  background-color: var(--temp-color);
   top: 3px;
   left: -15px;
 }
@@ -298,12 +338,12 @@ main {
   margin-bottom: 15px;
 }
 .calender span {
-  color: #89818d;
+  color: var(--main-text);
   font-size: 14px;
 }
 .calender i {
   margin-right: 5px;
-
+  color: var(--main-text);
   font-size: 14px;
 }
 .circle-dot {
@@ -313,12 +353,13 @@ main {
   top: 0px;
   left: -20px;
   border-radius: 50%;
-  background-color: var(--main-color);
+  background-color: var(--temp-color);
 }
 .position h1 {
   font-size: 16px;
   font-weight: bold;
   margin: 10px 0px;
+  color: var(--secondary-text);
 }
 
 /* .serv {
@@ -342,7 +383,7 @@ main {
 
 .card-pos {
   padding: 30px;
-  background-color: #fff;
+  background-color: var(--side-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -356,7 +397,7 @@ main {
 }
 
 .card-pos i {
-  color: var(--main-color);
+  color: var(--temp-color);
   font-size: 2rem;
   padding: 10px;
 }
@@ -364,6 +405,7 @@ main {
   margin-bottom: 15px;
   font-weight: bold;
   font-size: 16px;
+  color: var(--secondary-text);
 }
 
 .cards-port {
@@ -374,17 +416,20 @@ main {
   gap: 30px;
   padding: 10px;
 }
+.social-card h3 {
+  color: var(--secondary-text);
+}
 
 .cards-port .port-img {
   width: 30%;
-  background-color: #fff;
+  background-color: var(--side-color);
   padding: 10px;
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
   border-radius: 5px;
 }
 .portfolio .disc {
   padding: 15px 0px;
-  color: #000;
+  color: var(--secondary-text);
 }
 
 .cards-port .port-img img {
@@ -400,13 +445,14 @@ main {
   margin-top: 50px;
 }
 .contact-text h3 {
-  color: var(--main-color);
+  color: var(--temp-color);
   padding: 10px;
 }
 
 .contact-text p {
   font-weight: bold;
   font-size: 17px;
+  color: var(--secondary-text);
 }
 
 .social {
@@ -434,7 +480,7 @@ main {
 .social-card a i {
   font-size: 35px;
   padding: 15px;
-  color: var(--main-color);
+  color: var(--temp-color);
 }
 
 .contact-form input {
