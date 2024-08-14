@@ -16,6 +16,18 @@
   --temp-color: #ec1839;
   --border: #393939;
 }
+.color1 {
+  --temp-color: #ec1839;
+}
+.color2 {
+  --temp-color: #fa5b0f;
+}
+.color3 {
+  --temp-color: #37b182;
+}
+.color4 {
+  --temp-color: #1854b4;
+}
 
 * {
   padding: 0;
@@ -52,11 +64,60 @@ body {
   color: var(--temp-color);
 }
 
+.style-switcher {
+  background-color: var(--side-color);
+  width: 200px;
+  height: 100px;
+  position: fixed;
+  z-index: 99999;
+  right: -200px;
+  top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.setting-color {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.colors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.color1 {
+  background-color: #ec1839;
+}
+.color2 {
+  background-color: #fa5b0f;
+}
+.color3 {
+  background-color: #37b182;
+}
+.color4 {
+  background-color: #1854b4;
+}
+
+.colors span {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 40%;
+}
+
 .dark-mode-icon {
   z-index: 99999;
-  position: fixed;
-  right: 20px;
-  top: 20px;
+  position: absolute;
+  right: 210px;
+  top: 70px;
   background-color: var(--side-color);
   width: 35px;
   height: 35px;
@@ -67,6 +128,27 @@ body {
 }
 
 .dark-mode-icon i {
+  position: absolute;
+  color: var(--temp-color);
+  font-size: 25px;
+}
+.settings {
+  z-index: 99999;
+  position: absolute;
+  right: 210px;
+  top: 0px;
+  background-color: var(--side-color);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.show-setting {
+  right: 10px;
+}
+.settings i {
   position: absolute;
   color: var(--temp-color);
   font-size: 25px;
@@ -190,6 +272,7 @@ main {
   border-radius: 30px;
   color: #fff;
   margin-top: 50px;
+  display: inline-block;
 }
 
 .personal-img::after {
@@ -491,7 +574,8 @@ main {
   outline: none;
 }
 
-.contact-form input:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   border: none;
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
@@ -537,6 +621,7 @@ main {
   z-index: 9999;
   left: 260px;
   animation: slideSection 1s ease;
+  top: 0;
 }
 
 .section-back {
