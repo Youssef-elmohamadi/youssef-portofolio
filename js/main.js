@@ -132,3 +132,22 @@ typing();
 setInterval(() => {
   cursor.classList.toggle("cursor");
 }, 500);
+
+//########################################
+
+function sendEmail(event) {
+  event.preventDefault();
+  let parms = {
+    name: document.querySelector(".name").value,
+    email: document.querySelector(".email").value,
+    subject: document.querySelector(".subject").value,
+    message: document.querySelector(".message").value,
+  };
+
+  emailjs
+    .send("service_et228tn", "template_3kh4mqp", parms)
+    .then(() => alert("Email has been sent"))
+    .catch((error) => console.error("Error sending email:", error));
+
+    document.querySelector(".name").value = ""
+}

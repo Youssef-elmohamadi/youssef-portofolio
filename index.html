@@ -10,6 +10,17 @@
       href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "ner0acatZco8rqI1V",
+        });
+      })();
+    </script>
     <!-- bootstrap file  -->
     <!-- <link rel="stylesheet" href="CSS/bootstrap.css" /> -->
     <!-- my CSS file  -->
@@ -89,7 +100,7 @@
                 My expertise is to create and website design, and many more...
               </p>
               <a
-                href="Youssef Mohamed Ramadan (4).pdf"
+                href="Youssef Mohamed Ramadan.pdf"
                 target="_blank"
                 class="btn-cv"
                 download
@@ -193,8 +204,20 @@
           <p class="disc">My Last Projects :</p>
           <div class="cards-port">
             <div class="port-img">
+              <a href="https://youssef-elmohamadi.github.io/e-commerce/">
+                <img src="imgs/WhatsApp Imag.jpg" alt="" />
+              </a>
+            </div>
+            <div class="port-img">
               <a href="https://youssef-elmohamadi.github.io/Cart-/">
                 <img src="imgs/project1.png" alt="" />
+              </a>
+            </div>
+            <div class="port-img">
+              <a
+                href="https://youssef-elmohamadi.github.io/youssef-portofolio/"
+              >
+                <img src="imgs/porto.png" alt="" />
               </a>
             </div>
             <div class="port-img">
@@ -213,18 +236,6 @@
                 href="https://youssef-elmohamadi.github.io/leon/"
               >
                 <img src="imgs/leon.png" alt="" />
-              </a>
-            </div>
-            <div class="port-img">
-              <a
-                href="https://youssef-elmohamadi.github.io/youssef-portofolio/"
-              >
-                <img src="imgs/porto.png" alt="" />
-              </a>
-            </div>
-            <div class="port-img">
-              <a href="https://youssef-elmohamadi.github.io/News-Home-bage/">
-                <img src="imgs/new.png" alt="" />
               </a>
             </div>
           </div>
@@ -270,14 +281,36 @@
             <p>I'm very responsive to massege</p>
           </div>
           <div class="contact-form">
-            <form action="" method="post">
+            <form action="" method="get">
               <div class="input-line">
-                <input class="name" placeholder="Name" type="text" />
-                <input class="email" placeholder="Email" type="email" />
+                <input class="name" placeholder="Name" type="text" required />
+                <input
+                  class="email"
+                  placeholder="Email"
+                  type="email"
+                  required
+                />
               </div>
-              <input class="subject" placeholder="Subject" type="text" />
-              <textarea placeholder="Message" name="" id=""></textarea>
-              <button class="btn-cv contact-btn" type="submit">send</button>
+              <input
+                class="subject"
+                placeholder="Subject"
+                type="text"
+                required
+              />
+              <textarea
+                required
+                class="message"
+                placeholder="Message"
+                name=""
+                id=""
+              ></textarea>
+              <button
+                class="btn-cv contact-btn"
+                type="submit"
+                onclick="sendEmail(event)"
+              >
+                send
+              </button>
             </form>
           </div>
         </section>
